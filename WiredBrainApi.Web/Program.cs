@@ -18,6 +18,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/", () => "WiredBrain API is running!");
+app.MapGet("/", () => "WiredBrain API is runningg!");
 
 app.Run();
