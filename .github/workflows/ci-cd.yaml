@@ -12,6 +12,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Cache NuGet packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
     - name: Set up .NET
       uses: actions/setup-dotnet@v4
       with:
@@ -77,3 +85,12 @@ jobs:
       with:
         app-name: 'app-wiredbrainapi'
         package: app.zip
+
+    - name: Slack Notification
+      if: always()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,ref,workflow,job,took
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
