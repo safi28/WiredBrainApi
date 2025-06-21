@@ -43,7 +43,7 @@ jobs:
 
     - id: publish
       name: Publish
-      run: dotnet publish "WiredBrainApi.Web/WiredBrainApi.Web.csproj" -c Release -o ./publish --self-contained -r win-x64 /p:UseAppHost=true
+      run: dotnet publish "WiredBrainApi.Web/WiredBrainApi.Web.csproj" -c Release -o ./publish
 
     - name: Zip Artifact
       run: |
