@@ -43,7 +43,7 @@ jobs:
 
     - id: publish
       name: Publish
-      run: dotnet publish "WiredBrainApi.Web/WiredBrainApi.Web.csproj" -c Release -o ./publish --self-contained -r linux-x64 /p:UseAppHost=true
+      run: dotnet publish "WiredBrainApi.Web/WiredBrainApi.Web.csproj" -c Release -o ./publish --self-contained -r win-x64 /p:UseAppHost=true
 
     - name: Zip Artifact
       run: |
@@ -77,4 +77,3 @@ jobs:
       with:
         app-name: 'app-wiredbrainapi'
         package: app.zip
-        # Add your deployment script or command here
