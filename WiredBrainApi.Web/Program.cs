@@ -1,5 +1,7 @@
 using WiredBrainApi.Services;
 
+Console.WriteLine("WiredBrain API starting up...");
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
