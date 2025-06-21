@@ -24,5 +24,5 @@ A simple ASP.NET Core Web API for managing inventory, featuring continuous integ
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/safi28/WiredBrainApi.git
    cd WiredBrainApi.Web
